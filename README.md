@@ -38,6 +38,7 @@ goes into more detail on the various customization options for Elements (e.g. st
   - [`<*Element>` components](#element-components)
     - [Available components](#available-components)
     - [Props shape](#props-shape-2)
+    - [Using `elementRef`](#using-elementref)
   - [`injectStripe` HOC](#injectstripe-hoc)
     - [Example](#example)
 - [Troubleshooting](#troubleshooting)
