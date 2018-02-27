@@ -537,6 +537,38 @@ type PaymentRequestButtonProps = {
 };
 ```
 
+#### Using `elementRef`
+
+Note that the `elementRef` is a sort of escape hatch in case you need access to
+the underlying Element object from Stripe.js. For example, you can use
+`elementRef` to force your element to focus:
+
+```js
+// CardSection.js
+import React from 'react';
+import {CardElement} from 'react-stripe-elements';
+
+class CardSection extends React.Component {
+  handleReady = () => {
+    this._element.focus();
+  };
+
+  render = () => {
+    return (
+      <label>
+        Card details
+        <CardElement
+          elementRef={(el) => {this._element = el}}
+          onReady={this.handleReady}
+        />
+      </label>
+    );
+  };
+};
+
+export default CardSection;
+```
+
 ### `injectStripe` HOC
 
 ```js
